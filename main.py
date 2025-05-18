@@ -27,7 +27,7 @@ st.sidebar.header("Flight Data Filters")
 # 1. Select existing dataset
 selected_dataset = st.sidebar.selectbox("Select existing dataset", options=list(DATA_SOURCES.keys()))
 
-# 2. Upload your own data
+# 2. Upload your own data, File uploader here
 uploaded_file = st.sidebar.file_uploader("Or upload your CSV data", type=["csv"])
 
 @st.cache_data
@@ -53,6 +53,34 @@ st.sidebar.write(f"Total Records: {len(df)}")
 if df.empty:
     st.warning("No data found in dataset.")
     st.stop()
+
+
+
+# In the sidebar, before the file uploader
+st.sidebar.markdown("### Required CSV Data Format")
+st.sidebar.markdown("""
+Your CSV file **must** contain the following columns with exact names and data types:
+
+| Column       | Description                | Example          |
+|--------------|----------------------------|------------------|
+| `id`         | Unique record identifier   | 1                |
+| `date`       | Date (YYYY-MM-DD)          | 2025-05-18       |
+| `time`       | Time (HH:MM:SS.sss)        | 12:34:56.789     |
+| `teensytime` | Teensy internal timestamp  | 123456           |
+| `record_sn`  | Record serial number       | 15               |
+| `voltage`    | Voltage reading (Volts)    | 3.3              |
+| `current`    | Current reading (Amps)     | 0.5              |
+| `teensytemp` | Teensy temperature (°C)    | 25.0             |
+| `nano_value1` to `nano_value4` | Sensor values    | 100, 200, 300, 400 |
+| `valve_state`| Valve on/off state (0/1)   | 1                |
+| `x_pos`, `y_pos`, `alt` | Position coordinates      | 0.0, 0.0, 10.0   |
+| `eu_x`, `eu_y`, `eu_z` | Euler angles (degrees)     | 0.0, 0.0, 90.0   |
+| `acc_x`, `acc_y`, `acc_z` | Acceleration (m/s²)       | 0.1, 0.0, 9.8    |
+| `lat`, `lon`, `gps_alt` | GPS coordinates & altitude | 37.7749, -122.4194, 15.0 |
+""")
+
+
+
 
 
 
