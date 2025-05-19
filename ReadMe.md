@@ -1,5 +1,3 @@
-Sure! Here's a **simple README** for your Streamlit Plotly rocket telemetry visualization app, including the deployment info:
-
 ---
 
 # Rocket Telemetry Dashboard
