@@ -1,5 +1,3 @@
-Sure! Here's a **simple README** for your Streamlit Plotly rocket telemetry visualization app, including the deployment info:
-
 ---
 
 # Rocket Telemetry Dashboard
@@ -14,7 +12,6 @@ This app is deployed and accessible online at:
 
 **[https://telemetry-hre.streamlit.app/](https://telemetry-hre.streamlit.app/)**
 
-(Replace with your actual deployed URL)
 
 ---
 
